@@ -19,14 +19,12 @@ export const restrictLoggedInUserOnly = (
   }
 
   const user = getUser(sessionId);
-  if(!user)return;
-
-  const obj = {_id: user};
-
-  if (user) {
-    req.user = obj;
-    next();
-  } else {
-    res.redirect("/auth/signup");
+  if(!user) {
+    res.redirect("/auth/signup"); 
+    return;
   }
+
+  const obj:{_id:string} = {_id: user};
+  req.user = obj;
+  next();
 };

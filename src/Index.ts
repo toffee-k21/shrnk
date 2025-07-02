@@ -15,12 +15,12 @@ mongoose.connect('mongodb://localhost:27017/urlShortner')
 const app = express()
 const PORT = 8001
 
-// app.use(restrictLoggedInUserOnly()) ye yaha nhi ayega kuki req res hai toh ye 'url wle m jyga n
+
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }));
 
-app.set('view engine', 'ejs');//bta do konsa template engine use kr rhe ho
-app.set('views', path.resolve('./views'));//kaha pr h
+app.set('view engine', 'ejs');
+app.set('views', path.resolve('./views'));
 app.get('/',(req, res)=>{
   res.send("hello");
 })
