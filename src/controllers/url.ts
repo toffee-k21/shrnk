@@ -25,7 +25,7 @@ export const HandlePostUrl = async (req: Request, res: Response) => {
     userId: user._id,
   });
 
-  return res.redirect("url/");
+  return res.redirect("/url");
 };
 
 // GET handler to show all URLs created by the user
