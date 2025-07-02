@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/urlShortner')
 .catch((e)=>console.log('not connected'))
 
 const app = express()
-const PORT = 8001
+const PORT = 8000;
 
 
 app.use(cookieParser())
