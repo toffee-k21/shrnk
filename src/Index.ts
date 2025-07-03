@@ -6,9 +6,16 @@ import signRouter from './routes/user';
 import cookieParser from 'cookie-parser';
 import { restrictLoggedInUserOnly } from './middlewares/restrict';
 import URL from './models/url';
+import dotenv from "dotenv";
 
+dotenv.config();
+const MONGODB_URL = process.env.MONGO_URI;
 
-mongoose.connect('mongodb://localhost:27017/urlShortner')
+if (!MONGODB_URL) {
+  throw new Error("MONGO_URI is not defined in .env file");
+}
+
+mongoose.connect(`${MONGODB_URL}`)
 .then((r)=>console.log('mongoDB connected!'))
 .catch((e)=>console.log('not connected'))
 
