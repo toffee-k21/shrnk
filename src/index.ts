@@ -54,4 +54,4 @@ app.get('/:shortId',async (req,res)=>{
     return;
 })
 
-app.listen(PORT,()=>console.log(`server started at port : ${PORT}`));
+app.listen(PORT,'0.0.0.0',()=>console.log(`server started at port : ${PORT}`));
