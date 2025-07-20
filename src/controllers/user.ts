@@ -17,11 +17,18 @@ export const handleInputSignUp = (req: Request, res: Response): void => {
 export const handleSignup = async (req: Request, res: Response): Promise<void> => {
   const { name, email, password } = req.body;
 
+  const existingUser = await userModel.findOne({ email: email });
+  if (existingUser) {
+    res.status(400).json({ error: "Email already registered" });
+    return;
+  }
+
   const user = await userModel.create({
     userName: name,
     email,
     password,
   });
+
 
   const sessionId = uuidv4();
   setUser(sessionId, user._id);
