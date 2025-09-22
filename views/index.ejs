@@ -1,11 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      animation: fadeDown 0.8s ease;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      color: #333;
+      animation: fadeUp 0.8s ease;
+    }
+
+    a.cta {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 15px 35px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 4px 4px 0px #000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: fadeUp 1s ease;
+    }
+
+    a.cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0px #000;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      animation: fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Trimly</h1>
+  <p>
+    The simple, fast and privacy-friendly way to shorten your long URLs.
+    Create a short link in seconds and track its clicks with ease.
+  </p>
+  <a href="/url" class="cta">Trim Your URL Now</a>
+
+  <footer>© <%= new Date().getFullYear() %> Trimly – All rights reserved.</footer>
+</body>
 </html>

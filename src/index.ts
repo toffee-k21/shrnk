@@ -28,13 +28,15 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs');
 // app.set('views', path.resolve('./views'));
+
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 app.set('views', path.join(__dirname,'..', 'views'));
-app.get('/',(req, res)=>{
-  res.send("hello");
-})
-app.use('/url',restrictLoggedInUserOnly,urlRouter);
-app.use('/auth',signRouter);
-app.get('/:shortId',async (req,res)=>{
+app.use('/url', restrictLoggedInUserOnly, urlRouter);
+app.use('/auth', signRouter);
+app.get('/:shortId', async (req,res)=>{
     const mainUrl = await URL.findOneAndUpdate(
       { shortID: req.params.shortId },
       {

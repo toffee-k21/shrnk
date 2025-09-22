@@ -13,6 +13,7 @@ export const restrictLoggedInUserOnly = (
   next: NextFunction
 ) => {
   const sessionId = req.cookies?.uid;
+  console.log(sessionId);
 
   if (!sessionId) {
     return res.redirect("/auth/signin");
