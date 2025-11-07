@@ -26,7 +26,6 @@ const PORT = 8000;
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }));
 
-app.set('view engine', 'ejs');
 // app.set('views', path.resolve('./views'));
 
 app.get('/', (req, res) => {
