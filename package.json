@@ -3,21 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "npx tsc && node dist/index.js"
+ "scripts": {
+  "build": "tsc",
+  "deploy": "npm run build && npx serverless deploy",
+  "offline": "npx serverless offline"
   },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "serverless-http": "^3.2.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^17.0.1",
     "ejs": "^3.1.9",
+    "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.1",
     "nanoid": "^5.0.6",
     "nodemon": "^3.1.0",
+    "serverless-http": "^3.2.0",
     "short-unique-id": "^5.0.3",
     "shortid": "^2.2.16",
     "uuid": "^9.0.1"
@@ -27,6 +30,8 @@
     "@types/express": "^5.0.3",
     "@types/shortid": "^2.2.0",
     "@types/uuid": "^10.0.0",
+    "serverless": "^4.23.0",
+    "serverless-offline": "^14.4.0",
     "typescript": "^5.8.3"
   }
 }
