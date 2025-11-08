@@ -6,7 +6,7 @@
  "scripts": {
   "build": "tsc",
   "deploy": "npm run build && npx serverless deploy",
-  "offline": "npx serverless offline"
+  "offline": "npx serverless offlin"
   },
 
   "author": "",
