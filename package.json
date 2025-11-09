@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "build": "tsc",
-  "deploy": "npm run build && npx serverless deploy",
-  "offline": "npx serverless offlin"
+  "scripts": {
+    "build": "tsc",
+    "deploy": "npm run build && npx serverless deploy",
+    "offline": "npx serverless offline"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.927.0",
+    "@aws-sdk/lib-dynamodb": "^3.927.0",
+    "aws-sdk": "^2.1692.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^17.0.1",
     "ejs": "^3.1.9",
