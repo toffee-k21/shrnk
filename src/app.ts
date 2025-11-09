@@ -4,8 +4,8 @@ import mongoose from 'mongoose';
 import path from 'path';
 import signRouter from './routes/user';
 import cookieParser from 'cookie-parser';
-import { restrictLoggedInUserOnly } from './middlewares/restrict';
-import URL from './models/url';
+import { verifyToken } from './middlewares/restrict';
+import { handleRedirect } from './controllers/redirect';
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -33,26 +33,8 @@ app.get('/', (req, res) => {
 });
 
 app.set('views', path.join(__dirname,'..', 'views'));
-app.use('/url', restrictLoggedInUserOnly, urlRouter);
+app.use('/url', verifyToken, urlRouter);
 app.use('/auth', signRouter);
-app.get('/:shortId', async (req,res)=>{
-    const mainUrl = await URL.findOneAndUpdate(
-      { shortID: req.params.shortId },
-      {
-        $push: { visitHistory: Date.now() },
-      }
-    );
-    if(!mainUrl || !mainUrl.redirectUrl){
-      res.send('no url registered for this token !');
-      return;
-    }
-    if (
-      mainUrl.redirectUrl.startsWith("http://") ||
-      mainUrl.redirectUrl.startsWith("https://")
-    ) {
-      res.redirect(mainUrl?.redirectUrl);
-    } else res.redirect("http://" + mainUrl.redirectUrl);
-    return;
-})
+app.get('/:shortId', handleRedirect)
 
 export default app;

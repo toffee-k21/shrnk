@@ -13,7 +13,7 @@ const URLS_TABLE = process.env.URLS_TABLE || "shrink-urls";
 // POST handler to create short URL
 export const HandlePostUrl = async (req: Request, res: Response) => {
   const shortID = shortid.generate();
-  const user = req.user; // assuming middleware attaches user
+  const user = (req as any).user; // assuming middleware attaches user
   const redirectUrl = req.body.redirectUrl;
 
   try {
@@ -40,7 +40,7 @@ export const HandlePostUrl = async (req: Request, res: Response) => {
 
 // GET handler to show all URLs created by the user
 export const showAllurls = async (req: Request, res: Response) => {
-  const user = req.user;
+  const user = (req as any).user;
 
   try {
     // 2️⃣ Query URLs created by this user
