@@ -10,7 +10,8 @@ provider:
   runtime: nodejs20.x
   region: ap-south-1
   environment:
-    MONGO_URI: ${env:MONGO_URI}
+    JWT_SECRET: ${env:JWT_SECRET}
+    AWS_REGION: ${self:provider.region}
 
 functions:
   api:
