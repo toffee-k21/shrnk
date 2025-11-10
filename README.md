@@ -1,76 +1,93 @@
-<!--
-title: 'Serverless Framework Node Express API on AWS'
-description: 'This template demonstrates how to develop and deploy a simple Node Express API running on AWS Lambda using the Serverless Framework.'
-layout: Doc
-framework: v4
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, Inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# ⚡ Shrnk — Serverless URL Compression Service
 
-# Serverless Framework Node Express API on AWS
+**Shrnk** is a **serverless URL Compression Service** built with TypeScript and Express, deployed on AWS.  
+It transforms long, unwieldy URLs into compact, efficient forms while operating entirely serverlessly, leveraging AWS cloud services for **scalability, high availability, and low maintenance**.
 
-This template demonstrates how to develop and deploy a simple Node Express API service running on AWS Lambda using the Serverless Framework.
+---
 
-This template configures a single function, `api`, which is responsible for handling all incoming requests using the `httpApi` event. To learn more about `httpApi` event configuration options, please refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/). As the event is configured in a way to accept all incoming requests, the Express.js framework is responsible for routing and handling requests internally. This implementation uses the `serverless-http` package to transform the incoming event request payloads to payloads compatible with Express.js. To learn more about `serverless-http`, please refer to the [serverless-http README](https://github.com/dougmoscrop/serverless-http).
+## 🚀 Overview
 
-## Usage
+Shrnk provides a modern, lightweight system for **compressing URLs** into concise identifiers that are easy to share and manage.  
+The service is fully serverless, powered by AWS Lambda, API Gateway, DynamoDB, S3, and CloudWatch, making it **highly scalable and cost-efficient**.
 
-### Deployment
+---
 
-Install dependencies with:
+## 🌟 Key Highlights
 
+- 🌍 **Serverless Architecture** — zero server provisioning or maintenance  
+- ⚡ **Compact & Efficient URLs** — transform long URLs into short, shareable forms  
+- 📈 **Scalable by Design** — automatically handles traffic spikes without manual intervention  
+- 🔐 **Secure** — environment secrets and AWS IAM best practices  
+- 📊 **Monitored** — logs and metrics through AWS CloudWatch  
+
+---
+
+## 🏗️ Why Serverless & AWS Lambda?
+
+- **Auto-scaling**: AWS Lambda automatically scales the number of function instances based on traffic — Shrnk can handle sudden spikes in requests without downtime.  
+- **Pay-per-use**: You pay only for the compute time you use, making it cost-efficient.  
+- **High Availability**: Lambda functions run in multiple Availability Zones, ensuring resiliency.  
+- **No Server Management**: Focus on code and business logic; AWS handles infrastructure, scaling, and patching.  
+- **Fast Deployment**: Integrates seamlessly with Serverless Framework for quick updates and CI/CD pipelines.
+
+---
+
+## 🧱 Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Language | TypeScript |
+| Framework | Express.js |
+| Infrastructure | Serverless Framework |
+| Cloud Provider | AWS |
+| Core Services | Lambda, DynamoDB, S3, API Gateway, CloudWatch |
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/<your-username>/shrnk.git
+cd shrnk
 ```
+
+### 2️⃣ Install Dependencies
 npm install
-```
 
-and then deploy with:
+### 3️⃣ Environment Variables
+Create a .env file in the project root:
+DYNAMO_TABLE_NAME=shrnk-data
+JWT_SECRET=your_secret_key
+BASE_URL=https://your-domain.com
 
-```
-serverless deploy
-```
+### 4️⃣ Local Development
+Run locally using Serverless Offline:
+npm run offline
 
-After running deploy, you should see output similar to:
+### 5️⃣ Deploy to AWS
+npm run deploy
 
-```
-Deploying "aws-node-express-api" to stage "dev" (us-east-1)
 
-✔ Service deployed to stack aws-node-express-api-dev (96s)
+## 📦 Scripts
+CommandDescriptionnpm run buildCompile TypeScript into JavaScriptnpm run deployBuild and deploy via Serverless Frameworknpm run offlineRun the app locally with API Gateway + Lambda emulation
 
-endpoint: ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com
-functions:
-  api: aws-node-express-api-dev-api (2.3 kB)
-```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [`httpApi` event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/).
+## 📜 License
+This project is licensed under the ISC License.
 
-### Invocation
+## ✨ Author
+Taufiq Hassan
+Serverless & Cloud Developer ☁️
+🔗 GitHub
 
-After successful deployment, you can call the created application via HTTP:
+---
 
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
-```
+💡 With this version:  
+- **Scalability** of Lambda is highlighted.  
+- **Serverless benefits** like cost-efficiency, high availability, and auto-scaling are explained.  
+- Still **professional, creative, and GitHub-ready**.  
 
-Which should result in the following response:
+If you want, I can also make a **small ASCII or simple diagram showing Shrnk’s AWS architecture** — it makes the README more visually appealing and shows the flow from API Gateway → Lambda → DynamoDB → CloudWatch → S3.  
 
-```json
-{ "message": "Hello from root!" }
-```
-
-### Local development
-
-The easiest way to develop and test your function is to use the `dev` command:
-
-```
-serverless dev
-```
-
-This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
-
-Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
-
-When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
+Do you want me to add that?
