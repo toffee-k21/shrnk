@@ -1,11 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-interface AuthenticatedRequest extends Request {
-  user?: {
-    _id: string;
-  };
-}
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
@@ -26,8 +21,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
   }
 };
 
-
-// statefull
+// stateful
 // export const restrictLoggedInUserOnly = (
 //   req: AuthenticatedRequest,
 //   res: Response,

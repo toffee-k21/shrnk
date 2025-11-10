@@ -24,7 +24,7 @@ export const HandlePostUrl = async (req: Request, res: Response) => {
         Item: {
           shortID,
           redirectUrl,
-          userId: user._id,
+          userId: user.email,
           visitHistory: [],
           createdAt: new Date().toISOString(),
         },
@@ -50,7 +50,7 @@ export const showAllurls = async (req: Request, res: Response) => {
         IndexName: "userId-index", // ← secondary index required
         KeyConditionExpression: "userId = :uid",
         ExpressionAttributeValues: {
-          ":uid": user._id,
+          ":uid": user.email,
         },
       })
     );
