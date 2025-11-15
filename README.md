@@ -87,12 +87,3 @@ Serverless & Cloud Developer ☁️
 🔗 GitHub
 
 ---
-
-💡 With this version:  
-- **Scalability** of Lambda is highlighted.  
-- **Serverless benefits** like cost-efficiency, high availability, and auto-scaling are explained.  
-- Still **professional, creative, and GitHub-ready**.  
-
-If you want, I can also make a **small ASCII or simple diagram showing Shrnk’s AWS architecture** — it makes the README more visually appealing and shows the flow from API Gateway → Lambda → DynamoDB → CloudWatch → S3.  
-
-Do you want me to add that?
