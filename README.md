@@ -11,10 +11,9 @@ Shrnk provides a modern, lightweight system for **compressing URLs** into concis
 The service is fully serverless, powered by AWS Lambda, API Gateway, DynamoDB, S3, and CloudWatch, making it **highly scalable and cost-efficient**.
 
 ---
-
 ## 🏛️ Architecture
 
-![Shrnk Architecture Diagram](s3://amzn-s3-image-store/Screenshot%202025-11-15%20at%206.37.40%E2%80%AFPM.png)
+<img src="https://amzn-s3-image-store.s3.us-east-1.amazonaws.com/Screenshot+2025-11-15+at+6.37.40%E2%80%AFPM.png" alt="Shrnk Architecture Diagram" width="500"/>
 
 ---
 
