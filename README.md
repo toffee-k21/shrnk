@@ -12,6 +12,12 @@ The service is fully serverless, powered by AWS Lambda, API Gateway, DynamoDB, S
 
 ---
 
+## 🏛️ Architecture
+
+![Shrnk Architecture Diagram](s3://amzn-s3-image-store/Screenshot%202025-11-15%20at%206.37.40%E2%80%AFPM.png)
+
+---
+
 ## 🌟 Key Highlights
 
 - 🌍 **Serverless Architecture** — zero server provisioning or maintenance  
