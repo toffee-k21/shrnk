@@ -1,6 +1,6 @@
 {
   "/Users/taufiqhassan/Desktop/Code/Projects/shrnk/serverless.yml": {
-    "versionFramework": "4.23.0",
+    "versionFramework": "4.29.0",
     "servicePath": "/Users/taufiqhassan/Desktop/Code/Projects/shrnk/serverless.yml",
     "serviceConfigFileName": "serverless.yml",
     "service": {
@@ -133,7 +133,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-ap-south-1-090ea483-86f2",
-                  "S3Key": "serverless/shrnk/dev/1762796243030-2025-11-10T17:37:23.030Z/shrnk.zip"
+                  "S3Key": "serverless/shrnk/dev/1766215176300-2025-12-20T07:19:36.300Z/shrnk.zip"
                 },
                 "Handler": "dist/handler.handler",
                 "Runtime": "nodejs20.x",
@@ -158,14 +158,14 @@
                 "ApiLogGroup"
               ]
             },
-            "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY": {
+            "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "ApiLambdaFunction"
                 },
-                "CodeSha256": "8Ljv2A9fFZKvYMGeUeyM16U8/nWbrgXKX82dr78VDqk="
+                "CodeSha256": "abkHqZpcrecSy8uuqHoaa0XBdP+tG/harTLTMPB3VsI="
               }
             },
             "HttpApi": {
@@ -330,7 +330,7 @@
             "ApiLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY"
+                "Ref": "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M"
               },
               "Export": {
                 "Name": "sls-shrnk-dev-ApiLambdaFunctionQualifiedArn"
@@ -389,7 +389,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY"
+          "versionLogicalId": "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M"
         }
       },
       "plugins": [
@@ -402,7 +402,7 @@
         "artifactsS3KeyDirname": "serverless/shrnk/dev/code-artifacts",
         "deploymentBucket": "serverless-framework-deployments-ap-south-1-090ea483-86f2",
         "artifact": "/Users/taufiqhassan/Desktop/Code/Projects/shrnk/.serverless/shrnk.zip",
-        "artifactDirectoryName": "serverless/shrnk/dev/1762796243030-2025-11-10T17:37:23.030Z"
+        "artifactDirectoryName": "serverless/shrnk/dev/1766215176300-2025-12-20T07:19:36.300Z"
       },
       "resources": {
         "Resources": {
@@ -592,7 +592,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-ap-south-1-090ea483-86f2",
-                "S3Key": "serverless/shrnk/dev/1762796243030-2025-11-10T17:37:23.030Z/shrnk.zip"
+                "S3Key": "serverless/shrnk/dev/1766215176300-2025-12-20T07:19:36.300Z/shrnk.zip"
               },
               "Handler": "dist/handler.handler",
               "Runtime": "nodejs20.x",
@@ -617,14 +617,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY": {
+          "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "8Ljv2A9fFZKvYMGeUeyM16U8/nWbrgXKX82dr78VDqk="
+              "CodeSha256": "abkHqZpcrecSy8uuqHoaa0XBdP+tG/harTLTMPB3VsI="
             }
           },
           "HttpApi": {
@@ -789,7 +789,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY"
+              "Ref": "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M"
             },
             "Export": {
               "Name": "sls-shrnk-dev-ApiLambdaFunctionQualifiedArn"
@@ -865,12 +865,12 @@
     "serviceProviderAwsCfStackName": "shrnk-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:ap-south-1:140023380246:stack/shrnk-dev/dc592f90-bd6e-11f0-a6ba-02eea8de3279",
     "serviceProviderAwsCfStackCreated": "2025-11-09T13:20:29.595Z",
-    "serviceProviderAwsCfStackUpdated": "2025-11-10T16:17:59.092Z",
+    "serviceProviderAwsCfStackUpdated": "2025-11-10T17:37:30.585Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "ApiLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:ap-south-1:140023380246:function:shrnk-dev-api:9",
+        "OutputValue": "arn:aws:lambda:ap-south-1:140023380246:function:shrnk-dev-api:10",
         "Description": "Current Lambda function version",
         "ExportName": "sls-shrnk-dev-ApiLambdaFunctionQualifiedArn"
       },
@@ -993,7 +993,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-ap-south-1-090ea483-86f2",
-              "S3Key": "serverless/shrnk/dev/1762796243030-2025-11-10T17:37:23.030Z/shrnk.zip"
+              "S3Key": "serverless/shrnk/dev/1766215176300-2025-12-20T07:19:36.300Z/shrnk.zip"
             },
             "Handler": "dist/handler.handler",
             "Runtime": "nodejs20.x",
@@ -1018,14 +1018,14 @@
             "ApiLogGroup"
           ]
         },
-        "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY": {
+        "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "ApiLambdaFunction"
             },
-            "CodeSha256": "8Ljv2A9fFZKvYMGeUeyM16U8/nWbrgXKX82dr78VDqk="
+            "CodeSha256": "abkHqZpcrecSy8uuqHoaa0XBdP+tG/harTLTMPB3VsI="
           }
         },
         "HttpApi": {
@@ -1190,7 +1190,7 @@
         "ApiLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "ApiLambdaVersionoIAQ7elvugp4qb2aBrTiDDfI0iX2xnBwNDJ6c7SpY"
+            "Ref": "ApiLambdaVersion4N7DCyS160SoanuMEYZcp3SdtvVUEojdtbjHDNR7M"
           },
           "Export": {
             "Name": "sls-shrnk-dev-ApiLambdaFunctionQualifiedArn"
